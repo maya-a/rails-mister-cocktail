@@ -1,0 +1,13 @@
+<h1>Add ingredients</h1>
+<br>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.association(:ingredient, collection: Ingredient.all.order(:name)) %>
+  <%= f.input :description, label: 'dose' %>
+  <%= f.submit "+ add ingredient", class: "btn btn-primary" %>
+<% end %>
+<br>
+<br>
+<% @cocktail.doses.each_with_index do |dose, index| %>
+<p><%= index + 1 %>. <%= dose.ingredient.name %> <%= dose.description %></p>
+<% end %>
+<%= link_to 'done', cocktail_path(@cocktail), class: "btn btn-success"  %>
