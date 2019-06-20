@@ -9,14 +9,26 @@
 require 'json'
 require 'open-uri'
 
-puts 'starting json'
-serialized_drink = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
-drinks = JSON.parse(serialized_drink)
-drinks['drinks'].each do |drink|
-  Ingredient.create!(name: drink["strIngredient1"])
-end
-puts '3 more'
-Ingredient.create(name: 'lemon')
-Ingredient.create(name: 'ice')
-Ingredient.create(name: 'mint leaves')
-puts 'done'
+# puts 'starting json'
+# serialized_drink = open('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list').read
+# drinks = JSON.parse(serialized_drink)
+# drinks['drinks'].each do |drink|
+#   Ingredient.create!(name: drink["strIngredient1"])
+# end
+# puts '3 more'
+# Ingredient.create(name: 'lemon')
+# Ingredient.create(name: 'ice')
+# Ingredient.create(name: 'mint leaves')
+# puts 'done'
+
+puts "adding my ingredients"
+
+Ingredient.create(name: 'Tabasco sauce')
+Ingredient.create(name: 'Prepared horseradish')
+Ingredient.create(name: 'Worcestershire sauce')
+Ingredient.create(name: 'Celery salt')
+Ingredient.create(name: 'Ground black pepper')
+Ingredient.create(name: 'smoked paprika')
+Ingredient.create(name: 'soda')
+
+puts "done"
