@@ -5,16 +5,16 @@
 </div>
   <br>
   <br>
-    <h2 class ='text-center text-white mb-5'>Choose your cocktail</h2>
+    <h2 class ='text-center mb-5'>Choose your cocktail</h2>
   <div class="container">
     <div class="row">
       <!-- <div class="cards"> -->
         <% @cocktails.each do |cocktail| %>
         <div class="col-sm-6 col-lg-4">
-          <div class="card-trip" style = "">
-            <%= cl_image_tag cocktail.photo, height: 300, crop: :fill %>
+          <div class="card-trip">
 
-            <div class="bg-white d-flex justify-content-between mx-2 card-trip-infos">
+            <%= cl_image_tag cocktail.photo, height: 300%>
+          <div class="bg-white justify-content-between mx-2 card-trip-infos" style = "height: 60px;">
               <%= link_to cocktail.name, cocktail_path(cocktail) %>
               <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: "throw" %>
             </div>

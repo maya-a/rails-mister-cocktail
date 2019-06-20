@@ -5,7 +5,6 @@
 h1 {
   font-family: $cabin;
   font-size: 60px;
-  color: white;
   font-weight: bold;
 }
 
@@ -23,4 +22,13 @@ h2 {
 
 body {
   background-color : rgb(50, 50, 60);
+  color: white;
+}
+
+.throw {
+  transition: 0.1s ease;
+}
+
+.throw:hover {
+  font-size: 20px;
 }
