@@ -14,5 +14,5 @@
     <% @cocktail.doses.each do |dose| %>
     <p><%= dose.description %> of <%= dose.ingredient.name %> </p>
     <% end %>
-    <%= link_to 'done', cocktail_path(@cocktail), class: "btn btn-info"  %></div>
+    <%= link_to 'done', cocktail_path(@cocktail), class: "btn btn-info mb-5"  %></div>
   </div>
