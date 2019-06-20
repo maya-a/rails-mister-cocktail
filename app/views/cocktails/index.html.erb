@@ -7,9 +7,9 @@
   <div class="container">
     <h2 class ='text-center'>Choose your cocktail</h2>
     <br>
-    <div class="d-flex"><% @cocktails.each do |cocktail| %>
+    <div class="cards"><% @cocktails.each do |cocktail| %>
     <div class="row">
-      <div class="col-sm-4 col-md-6">
+      <div class="col-sm-4 col-md-3">
         <div class="card-trip" style = "width: 300px;">
             <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
 
