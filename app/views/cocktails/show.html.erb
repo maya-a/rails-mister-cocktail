@@ -7,13 +7,15 @@
 
 
 
-<div class="container">
-  <h2 class = "mb-3"> How you make it</h2>
+<div class="container ">
+  <h2 class = "mb-3 mr-5"> How you make it</h2>
   <% @cocktail.doses.each_with_index do |dose, index| %>
   <p class = "w-50"><%= link_to "🗑", dose_path(dose), method: :delete  %> <%= index + 1 %>. <%= dose.description %> of <%= dose.ingredient.name %>
   </p>
   <% end %>
-
+ <div class="container text-center"><h2 class = "mb-3"> And there you have it...</h2>
+   <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill, class: "rounded" %></div>
+ <br>
 <div class= "d-flex justify-content-center mt-5">
   <%= link_to '⃪back to cocktails', cocktails_path, class: 'btn btn-primary mr-4'%>
   <%= link_to '+ add ingredients', new_cocktail_dose_path(@cocktail) , class: 'btn btn-info'%>

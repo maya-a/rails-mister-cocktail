@@ -8,10 +8,10 @@
 <br>
 <div class="container d-flex"><% @cocktails.each do |cocktail| %>
   <div class="card-trip" style = "width: 300px;">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style = "width: 300px;">
+      <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill, class: "rounded" %></div>
 </div>
 <br>
-      <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: "throw d-none " %>
+      <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: "throw " %>
       <%= link_to cocktail.name, cocktail_path(cocktail)  %>
      <br>
   <% end %>
@@ -19,11 +19,9 @@
 
 <br>
 
-<%= cl_image_tag @article.photo, height: 300, width: 400, crop: :fill %>
-
 <br>
 
- <div class="d-flex justify-content-center">
+ <div class="d-flex justify-content-center mb-5">
    <%= link_to '+Add a cocktail', new_cocktail_path, class: "btn btn-primary mr-3" %>
    <button class = "btn btn-danger toggle-trash">Delete a cocktail</button>
  </div>
