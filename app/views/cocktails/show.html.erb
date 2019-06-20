@@ -10,7 +10,8 @@
 <div class="container ">
   <h2 class = "mb-3 mr-5"> How you make it</h2>
   <% @cocktail.doses do |dose| %>
-  <p class = "w-50"><%= link_to "🗑", dose_path(dose), method: :delete  %> <%= dose.description %> of <%= dose.ingredient.name %>
+  <p class = "w-50">
+    <%= link_to "🗑", dose_path(dose), method: :delete  %> <%= dose.description %> of <%= dose.ingredient.name %>
   </p>
   <% end %>
  <div class="container text-center "><h2 class = "mb-5"> And there you have it...</h2>
