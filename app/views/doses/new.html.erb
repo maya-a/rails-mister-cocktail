@@ -11,8 +11,8 @@
   <% end %>
 
   <div class="doses ml-5">
-    <% @cocktail.doses.each_with_index do |dose, index| %>
-    <p><%= index + 1 %>. <%= dose.description %> of <%= dose.ingredient.name %> </p>
+    <% @cocktail.doses.each do |dose| %>
+    <p><%= dose.description %> of <%= dose.ingredient.name %> </p>
     <% end %>
     <%= link_to 'done', cocktail_path(@cocktail), class: "btn btn-warning"  %></div>
   </div>
