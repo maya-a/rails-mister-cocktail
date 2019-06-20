@@ -3,7 +3,7 @@
 </div>
   <br>
   <h2 class= "text-center">the <%= @cocktail.name %></h2>
-<div class=" form d-flex container mt-5 justify-content-around">
+<div class="d-flex container mt-5 justify-content-around">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.association(:ingredient, collection: Ingredient.all.order(:name)) %>
     <%= f.input :description, label: 'dose' %>

@@ -4,28 +4,37 @@
   <i class="fab fa-redhat text-white icon"></i>
   <br>
 </div>
-  <h2 class ='text-center'>Choose your cocktail</h2>
-<br>
-<div class="container d-flex"><% @cocktails.each do |cocktail| %>
-  <div class="card-trip" style = "width: 300px;">
-      <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill, class: "rounded" %></div>
-</div>
-<br>
-      <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: "throw " %>
-      <%= link_to cocktail.name, cocktail_path(cocktail)  %>
-     <br>
-  <% end %>
+  <div class="container">
+    <h2 class ='text-center'>Choose your cocktail</h2>
+    <br>
+    <div class="d-flex"><% @cocktails.each do |cocktail| %>
+    <div class="row">
+      <div class="col-sm-4 col-md-6">
+        <div class="card-trip" style = "width: 300px;">
+            <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+
+            <div class="bg-white d-flex justify-content-between mx-2 card-trip-infos">
+              <%= link_to cocktail.name, cocktail_path(cocktail) %>
+              <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: "throw" %>
+              </div>
+        </div>
+      </div>
+    </div>
+       <br>
+    <% end %>
+      </div>
     </div>
 
-<br>
+    <br>
 
-<br>
+    <br>
 
- <div class="d-flex justify-content-center mb-5">
-   <%= link_to '+Add a cocktail', new_cocktail_path, class: "btn btn-primary mr-3" %>
-   <button class = "btn btn-danger toggle-trash">Delete a cocktail</button>
- </div>
-</div>
+     <div class="d-flex justify-content-center mb-5">
+     <%= link_to '+Add a cocktail', new_cocktail_path, class: "btn btn-primary mr-3" %>
+     <!-- <button class = "btn btn-danger toggle-trash">Delete a cocktail</button> -->
+     </div>
+    </div>
+  </div>
 
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'toggle_trash' %>
