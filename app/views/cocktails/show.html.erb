@@ -1,11 +1,24 @@
-<h1>The <%= @cocktail.name %></h1>
+<div class="d-flex banner show justify-content-center mb-4 align-items-center" style= 'background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(<%= @tag %>);'>
+<!-- <div class="d-flex banner show justify-content-center mb-4 align-items-center" style= 'background-image: url("https://images.unsplash.com/photo-1546029029-d02d455e0e30?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop&ixid=eyJhcHBfaWQiOjF9");'> -->
 
-<% @cocktail.doses.each_with_index do |dose, index| %>
-<p><%= link_to "🗑", dose_path(dose), method: :delete  %> <%= index + 1 %>. <%= dose.description %> of <%= dose.ingredient.name %>
-</p>
-<% end %>
+  <h1>The <%= @cocktail.name %></h1>
+ </div>
 
-<%= link_to '⃪back to cocktails', cocktails_path, class: 'btn btn-primary'%>
 
-<%= link_to '+ add ingredients', new_cocktail_dose_path(@cocktail) , class: 'btn btn-info'%>
+
+
+<div class="container">
+  <h2 class = "mb-3"> How you make it</h2>
+  <% @cocktail.doses.each_with_index do |dose, index| %>
+  <p class = "w-50"><%= link_to "🗑", dose_path(dose), method: :delete  %> <%= index + 1 %>. <%= dose.description %> of <%= dose.ingredient.name %>
+  </p>
+  <% end %>
+
+<div class= "d-flex justify-content-center mt-5">
+  <%= link_to '⃪back to cocktails', cocktails_path, class: 'btn btn-primary mr-4'%>
+  <%= link_to '+ add ingredients', new_cocktail_dose_path(@cocktail) , class: 'btn btn-info'%>
+  </div>
+</div>
+
+
 

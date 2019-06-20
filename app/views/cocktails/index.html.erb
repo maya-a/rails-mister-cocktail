@@ -1,14 +1,31 @@
 
-<div class="banner">
-  <h1>Our cocktails</h1>
-</div>ocktails</h1>
+<div class="home banner f-flex text-center align-items-center mb-3">
+  <h1 class="pt-3 pb-2" >Mister cocktail </h1>
+  <i class="fab fa-redhat text-white icon"></i>
+  <br>
 </div>
-<% @cocktails.each do |cocktail| %>
-<%= link_to "🗑", cocktail_path(cocktail), method: :delete  %>
-<%= link_to cocktail.name, cocktail_path(cocktail)  %>
+  <h2 class ='text-center'>Choose your cocktail</h2>
 <br>
-<% end %>
+<div class="container d-flex"><% @cocktails.each do |cocktail| %>
+  <div class="card-trip" style = "width: 300px;">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style = "width: 300px;">
+</div>
+<br>
+      <%= link_to "🗑", cocktail_path(cocktail), method: :delete, class: "throw d-none " %>
+      <%= link_to cocktail.name, cocktail_path(cocktail)  %>
+     <br>
+  <% end %>
+    </div>
 
 <br>
 <br>
-<%= link_to '+Add a cocktail', new_cocktail_path, class: "btn btn-primary" %>
+
+ <div class="d-flex justify-content-center">
+   <%= link_to '+Add a cocktail', new_cocktail_path, class: "btn btn-primary mr-3" %>
+   <button class = "btn btn-danger toggle-trash">Delete a cocktail</button>
+ </div>
+</div>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'toggle_trash' %>
+<% end %>

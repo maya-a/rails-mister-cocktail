@@ -12,10 +12,11 @@
   </head>
 
   <body>
-    <div class="container mt-3"><%= yield %></div>
+    <%= yield %>
 
 
-    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
-     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
+     <%= javascript_pack_tag "application" %>
+        <!-- from app/javascript/packs/application.js -->
+    <%= yield(:after_js) %>
   </body>
 </html>

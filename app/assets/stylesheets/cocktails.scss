@@ -3,9 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 {
+  font-family: $cabin;
+  font-size: 60px;
+  color: white;
   font-weight: bold;
 }
 
 a:hover {
   text-decoration: none;
 }
+
+.icon {
+  font-size: 150px;
+}
+
+h2 {
+  font-weight: bold;
+}
+

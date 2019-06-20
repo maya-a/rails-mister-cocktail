@@ -5,7 +5,9 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
-  def show; end
+  def show
+    @tag = "https://source.unsplash.com/1600x900/?#{@cocktail.name.gsub(' ', '-')}"
+  end
 
   def new
     @cocktail = Cocktail.new
@@ -42,5 +44,4 @@ class CocktailsController < ApplicationController
   def cocktail_params
     params.require(:cocktail).permit(:name)
   end
-
 end
