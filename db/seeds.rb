@@ -23,12 +23,16 @@ require 'open-uri'
 
 puts "adding my ingredients"
 
-Ingredient.create(name: 'Tabasco sauce')
-Ingredient.create(name: 'Prepared horseradish')
-Ingredient.create(name: 'Worcestershire sauce')
-Ingredient.create(name: 'Celery salt')
+# Ingredient.create(name: 'Tabasco sauce')
+# Ingredient.create(name: 'Prepared horseradish')
+# Ingredient.create(name: 'Worcestershire sauce')
+# Ingredient.create(name: 'Celery salt')
+# Ingredient.create(name: 'Ground black pepper')
+# Ingredient.create(name: 'smoked paprika')
+# Ingredient.create(name: 'soda')
+
 Ingredient.create(name: 'Ground black pepper')
 Ingredient.create(name: 'smoked paprika')
-Ingredient.create(name: 'soda')
+
 
 puts "done"
